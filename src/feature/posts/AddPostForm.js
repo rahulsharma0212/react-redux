@@ -17,7 +17,7 @@ const AddPostForm = () => {
   const onSavePostClicked = () => {
     if (title && content) {
       dispatch(postAdded(title, content, userId));
-
+      setUserId("");
       setTitle("");
       setContent("");
     }
@@ -45,6 +45,7 @@ const AddPostForm = () => {
         />
         <label htmlFor="postAuthor">Author:</label>
         <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
+          <option value=""></option>
           {userOptions}
         </select>
         <label htmlFor="postContent">Content:</label>
