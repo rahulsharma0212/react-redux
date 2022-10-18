@@ -5,8 +5,10 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import { fetchUser } from "./feature/users/userSlice";
+import { fetchPosts } from "./feature/posts/postSlice";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+store.dispatch(fetchPosts());
 store.dispatch(fetchUser());
 
 ReactDOM.render(
